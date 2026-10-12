@@ -80,20 +80,6 @@ formwatch report --html
 
 ---
 
-### 🎓 [expert-mentor](https://github.com/voidstackloop/expert-mentor): turns any LLM into a real teacher
-
-Most AI "tutor" prompts are a persona and a vibe. This one is based on learning science: retrieval practice, spaced repetition and a learner model that remembers what you've mastered between sessions. It works with Claude, ChatGPT, Gemini, Ollama and llama.cpp, and has **zero runtime dependencies**.
-
-```sh
-pipx install expert-mentor
-```
-
-[![PyPI](https://img.shields.io/pypi/v/expert-mentor.svg)](https://pypi.org/project/expert-mentor/)
-
-`Python` `LLM` `CLI` `Published on PyPI`
-
----
-
 ## 🧭 How I work
 
 I'm self-taught and learned by building real projects instead of tutorials. For every project, I:
