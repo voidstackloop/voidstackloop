@@ -7,6 +7,7 @@
 
 <p align="center">
   <a href="mailto:salihyilboga98@gmail.com"><img src="https://img.shields.io/badge/Open_to-remote_backend_roles-2ea44f?style=for-the-badge" alt="Open to remote backend roles"></a>
+  <a href="https://portfolio.voidstackloop.com/"><img src="https://img.shields.io/badge/Portfolio-portfolio.voidstackloop.com-2563eb?style=for-the-badge" alt="Portfolio: portfolio.voidstackloop.com"></a>
 </p>
 
 <p align="center">
@@ -30,6 +31,8 @@
 ---
 
 ## 🛠️ Featured work
+
+Each project has an architecture walkthrough and the design decisions behind it on my [portfolio](https://portfolio.voidstackloop.com/).
 
 ### 🎥 [escld](https://github.com/voidstackloop/escld): real-time video calls and live streaming
 
@@ -92,5 +95,5 @@ I'm self-taught and learned by building real projects instead of tutorials. For 
 
 <p align="center">
   <b>Hiring for a remote backend role? I'd like to hear about it.</b><br>
-  📫 <a href="mailto:salihyilboga98@gmail.com">salihyilboga98@gmail.com</a>
+  📫 <a href="mailto:salihyilboga98@gmail.com">salihyilboga98@gmail.com</a> · 🌐 <a href="https://portfolio.voidstackloop.com/">portfolio.voidstackloop.com</a>
 </p>
