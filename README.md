@@ -2,7 +2,7 @@
 
 <p align="center">
   <b>I build backend systems that people can actually run.</b><br>
-  A Rust WebRTC server, a Rust CLI with release binaries on three platforms, and a Python package on PyPI, all built end to end.
+  A Rust WebRTC server, a Rust CLI with release binaries on three platforms, a Python data cleaner and an Electron desktop app with a Rust addon, all built end to end.
 </p>
 
 <p align="center">
@@ -25,7 +25,9 @@
 
 - 🦀 **Wrote a WebRTC SFU and an RTMP-to-HLS ingest server in Rust**, part of an 8-service social platform.
 - 📈 **Built a data cleaner that raised model accuracy by +8.14 points on average** across 15 benchmark runs and cut training time by **~49%**.
-- 📦 **Ship things people can install:** release binaries for Linux, macOS and Windows, and a package on PyPI.
+- 🔍 **Made a browser-testing CLI 5.9x faster by running checks in parallel:** 35 forms and 455 checks drop from 47.85 s to 8.14 s.
+- 🖥️ **Built a desktop app for local and cloud AI models,** where a small Rust addon cut 5,000 audit-log writes from about 20 s to about 0.3 s.
+- 📦 **Ship things people can install:** release binaries for Linux, macOS and Windows, and a ready-to-use GitHub Action.
 - 🧪 **Tested, documented and runnable by someone else**, because code nobody can run isn't finished.
 
 ---
@@ -77,9 +79,23 @@ formwatch report --html
 
 <p align="center"><img src="https://raw.githubusercontent.com/voidstackloop/formwatch/master/docs/images/html-report.png" width="720" alt="formwatch HTML report"></p>
 
+Checks run in parallel: on 35 forms (455 checks), one worker takes 47.85 s and eight take **8.14 s**.
+
 [v0.1.0 released](https://github.com/voidstackloop/formwatch/releases/latest) with binaries for Linux, macOS (Intel and Apple Silicon) and Windows.
 
 `Rust` `Chromium` `Accessibility` `CLI`
+
+---
+
+### 🧠 [modelforge](https://github.com/voidstackloop/modelforge): local and cloud AI models in one desktop app
+
+An Electron app (TypeScript, React) that puts local models (llama.cpp, vLLM) and cloud models (OpenAI, Anthropic, Gemini) in one streaming chat. Its agent mode can read and write files and run commands in a folder you choose.
+
+- **Safe by design:** every agent action needs your approval, commands run in an OS sandbox where one exists, and the UI reaches the main process only through a typed preload bridge with context isolation.
+- **Rust where it earns its place:** a napi-rs addon cut 5,000 audit-log writes from about 20 seconds to about 0.3 seconds, with an automatic TypeScript fallback.
+- **Honest scope:** the repo documents it as for research and clinician-supervised evaluation only, not a certified medical product.
+
+`Electron` `TypeScript` `Rust (napi-rs)` `llama.cpp` `vLLM` `MCP`
 
 ---
 
