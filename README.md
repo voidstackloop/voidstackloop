@@ -1,12 +1,12 @@
 <h1 align="center">Hi, I'm Voidstackloop 👋</h1>
 
 <p align="center">
-  <b>I build AI tools that run on real hardware and hold up under real use.</b><br>
-  LLM inference on consumer GPUs, a desktop workspace for local and cloud models, training-data cleaning, agent memory and MCP servers, built end to end.
+  <b>ML backend engineer: I build the systems that serve, feed and secure models.</b><br>
+  LLM inference servers on consumer GPUs, training-data pipelines, MCP servers and agent backends, in Python and Rust, built end to end.
 </p>
 
 <p align="center">
-  <a href="mailto:salihyilboga98@gmail.com"><img src="https://img.shields.io/badge/Open_to-remote_AI_engineering_roles-2ea44f?style=for-the-badge" alt="Open to remote AI engineering roles"></a>
+  <a href="mailto:salihyilboga98@gmail.com"><img src="https://img.shields.io/badge/Open_to-remote_ML_backend_roles-2ea44f?style=for-the-badge" alt="Open to remote ML backend roles"></a>
   <a href="https://portfolio.voidstackloop.com/"><img src="https://img.shields.io/badge/Portfolio-portfolio.voidstackloop.com-2563eb?style=for-the-badge" alt="Portfolio: portfolio.voidstackloop.com"></a>
 </p>
 
@@ -33,7 +33,7 @@
 
 ---
 
-## 🛠️ AI projects
+## 🛠️ ML and AI projects
 
 ### 🚀 [extended-strata-moe](https://github.com/voidstackloop/extended-strata-moe): big MoE models on a small GPU
 
@@ -126,6 +126,6 @@ I'm self-taught and learned by building real projects instead of tutorials. For 
 ---
 
 <p align="center">
-  <b>Hiring for a remote AI or LLM engineering role? I'd like to hear about it.</b><br>
+  <b>Hiring for a remote ML backend or ML infrastructure role? I'd like to hear about it.</b><br>
   📫 <a href="mailto:salihyilboga98@gmail.com">salihyilboga98@gmail.com</a> · 🌐 <a href="https://portfolio.voidstackloop.com/">portfolio.voidstackloop.com</a>
 </p>
