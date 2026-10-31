@@ -2,7 +2,7 @@
 
 <p align="center">
   <b>ML backend engineer: I build the systems that serve, feed and secure models.</b><br>
-  LLM inference servers on consumer GPUs, training-data pipelines, MCP servers and agent backends, in Python and Rust, built end to end.
+  LLM inference on consumer GPUs, agent memory over MCP, LLM tutoring and AI-driven app testing, in Python and Rust, built end to end.
 </p>
 
 <p align="center">
@@ -13,7 +13,6 @@
 <p align="center">
   <img src="https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white" alt="Python">
   <img src="https://img.shields.io/badge/Rust-000000?style=flat&logo=rust&logoColor=white" alt="Rust">
-  <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat&logo=typescript&logoColor=white" alt="TypeScript">
   <img src="https://img.shields.io/badge/CUDA-76B900?style=flat&logo=nvidia&logoColor=white" alt="CUDA">
   <img src="https://img.shields.io/badge/llama.cpp-1f2937?style=flat" alt="llama.cpp">
   <img src="https://img.shields.io/badge/MCP-6b46c1?style=flat" alt="Model Context Protocol">
@@ -24,63 +23,15 @@
 
 ## ⚡ In 10 seconds
 
-- 🚀 **Run a 120B model at 28 tokens/s on an 8 GB laptop GPU:** a llama.cpp extension that keeps hot MoE experts in VRAM, up to **2.1x faster** than the best layer split.
-- 📈 **Raised model accuracy by +8.14 points on average** across 15 benchmark runs by cleaning training data, and cut training time by **~49%**.
 - 🧠 **Gave AI coding agents a memory over MCP** that answers a question in ~168 tokens instead of reading 38,921 tokens of source (**~231x cheaper**).
-- 🖥️ **Built a desktop app for local and cloud models** with an approval-gated agent mode and a Rust addon that made audit logging ~60x faster.
-- 🔐 **Wrote a fail-closed Rust MCP gateway** with OIDC, RBAC, signed approval tickets and a tamper-evident audit log.
+- 🎓 **Turned any LLM into a calibrated tutor** that remembers what you've mastered, shipped as a CLI on PyPI.
+- 🧑 **Built a tester that uses your app like a real person:** typos, rage-clicks and locale mix-ups from 8 personas across web, CLI, API, chat and more, with zero runtime dependencies.
+- 🚀 **Run a 120B model at 28 tokens/s on an 8 GB laptop GPU:** a llama.cpp extension that keeps hot MoE experts in VRAM, up to **2.1x faster** than the best layer split.
 - 🧪 **Measured, tested and documented**: I don't claim a number until a benchmark backs it.
 
 ---
 
 ## 🛠️ ML and AI projects
-
-### 🚀 [extended-strata-moe](https://github.com/voidstackloop/extended-strata-moe): big MoE models on a small GPU
-
-Extends [Strata](https://github.com/Niko1221/Strata) from one model to **every Mixture-of-Experts architecture llama.cpp supports** (DeepSeek, Qwen3 MoE, gpt-oss, GLM, Llama 4, Kimi and more). The experts a conversation actually uses stay cached in VRAM, the CPU computes the misses from system RAM at the same time, and the two sync through a **3 µs CUDA mailbox**, so nothing is uploaded over PCIe during generation.
-
-| RTX 4060 Laptop, 8 GB VRAM | Best llama.cpp layer split | extended-strata-moe |
-|---|---:|---:|
-| gpt-oss-120b (63 GB) | 15.9 t/s | **28.2 t/s (+77%)** |
-| Qwen3-Coder-Next 80B (65.6 GB) | 17.8 t/s | **37.2 t/s (+109%)** |
-
-Verified on 53 MoE architectures with KL divergence under 0.002 against CPU-only evaluation. It serves OpenAI- and Anthropic-compatible APIs, so Claude Code or Cursor can use it directly.
-
-`C++ / CUDA` `Python` `llama.cpp` `LLM inference`
-
----
-
-### 🧠 [modelforge](https://github.com/voidstackloop/modelforge): local and cloud AI models in one desktop app
-
-An Electron app that puts local models (llama.cpp, vLLM) and cloud models (OpenAI, Anthropic, Gemini) in one streaming chat, now focused on clinical decision support and research.
-
-- **Agent mode with guardrails:** the model can read and write files and run commands in a folder you choose, and every action needs your approval.
-- **Safety by design:** emergency red-flag detection, allergy and medication conflict warnings, and a consent preview before patient data goes to a cloud provider.
-- **Rust where it earns its place:** a napi-rs addon cut 5,000 audit-log writes from about 20 s to about 0.3 s, with a TypeScript fallback.
-- **Honest scope:** documented as decision support, not a diagnostician or a certified medical product.
-
-<p align="center"><img src="https://raw.githubusercontent.com/voidstackloop/modelforge/main/docs/screenshots/chat.png" width="720" alt="modelforge chat with a local model"></p>
-
-`Electron` `TypeScript` `Rust (napi-rs)` `llama.cpp` `vLLM` `MCP`
-
----
-
-### 📊 [buffdata](https://github.com/voidstackloop/buffdata): better training data means better models
-
-A Python CLI and SDK that validates, deduplicates, PII-redacts and LLM-scores datasets before training. It works with OpenAI, Anthropic, Gemini or a local model, and a **Rust worker** runs managed jobs from a queue.
-
-| Benchmark (40% duplicated, 10% empty rows) | Before | After |
-|---|---|---|
-| DBpedia-14 | 86.97% | **96.68%** |
-| Emotion | 71.23% | **83.77%** |
-| AG News, 100k rows | 83.39% | **89.42%** |
-| Training time, AG News 100k | 80.2 s | **42.3 s** |
-
-On already-clean data, accuracy stays within ±0.10 points, so it doesn't damage good datasets.
-
-`Python` `Rust` `LLM APIs` `Data quality`
-
----
 
 ### 🗂️ [project-memory](https://github.com/voidstackloop/project-memory): long-term memory for AI coding agents
 
@@ -107,11 +58,36 @@ pipx install expert-mentor
 
 ---
 
-### 🔐 [modelforge-clinical-mcp](https://github.com/voidstackloop/modelforge-clinical-mcp): a security-first MCP gateway for clinical AI
+### 🧑 [human-like-ai-tester](https://github.com/voidstackloop/human-like-ai-tester): test your app like a real, messy human
 
-A Rust gateway that decides what an AI model may read or change. It fails closed and enforces OIDC tokens, roles, per-field grants and kill switches. Writes need a signed single-use approval ticket and are deduplicated by an idempotency key, and every decision lands in an audit log without patient data.
+A Python CLI and library on [PyPI](https://pypi.org/project/human-like-ai-tester/) that tests web apps, CLIs, APIs, chatbots, desktop and mobile apps and data pipelines the way people actually use them: adjacent-key typos, `(555) 234-5678` in digit-only fields, rage-clicks after 1.5 s of silence, Back-button navigation and `12/05/2026` read in the wrong locale.
 
-`Rust` `MCP` `OIDC / OAuth 2` `Zero trust`
+- **8 personas**, from a rushed commuter to a screen-reader user, each with its own typo rate, patience and habits.
+- **One merged audit:** a multi-persona sweep produces a single deduplicated Markdown and JSON report.
+- **Agent-ready:** ships LLM prompts and an agent skill so an AI agent can run the same human-style test session.
+- Zero runtime dependencies, 71 network-free tests and CI on Python 3.9 to 3.13.
+
+```sh
+pip install human-like-ai-tester
+human-tester demo
+```
+
+`Python` `AI agents` `QA automation` `Accessibility`
+
+---
+
+### 🚀 [extended-strata-moe](https://github.com/voidstackloop/extended-strata-moe): big MoE models on a small GPU
+
+Extends [Strata](https://github.com/Niko1221/Strata) from one model to **every Mixture-of-Experts architecture llama.cpp supports** (DeepSeek, Qwen3 MoE, gpt-oss, GLM, Llama 4, Kimi and more). The experts a conversation actually uses stay cached in VRAM, the CPU computes the misses from system RAM at the same time, and the two sync through a **3 µs CUDA mailbox**, so nothing is uploaded over PCIe during generation.
+
+| RTX 4060 Laptop, 8 GB VRAM | Best llama.cpp layer split | extended-strata-moe |
+|---|---:|---:|
+| gpt-oss-120b (63 GB) | 15.9 t/s | **28.2 t/s (+77%)** |
+| Qwen3-Coder-Next 80B (65.6 GB) | 17.8 t/s | **37.2 t/s (+109%)** |
+
+Verified on 53 MoE architectures with KL divergence under 0.002 against CPU-only evaluation. It serves OpenAI- and Anthropic-compatible APIs, so Claude Code or Cursor can use it directly.
+
+`C++ / CUDA` `Python` `llama.cpp` `LLM inference`
 
 ---
 
@@ -119,7 +95,7 @@ A Rust gateway that decides what an AI model may read or change. It fails closed
 
 I'm self-taught and learned by building real projects instead of tutorials. For every project, I:
 
-1. **Start with the hard problem.** GPU memory scheduling, dataset contamination, agent permissions: the part most people would outsource.
+1. **Start with the hard problem.** GPU memory scheduling, agent context, human error: the part most people would outsource.
 2. **Measure it.** Every number above comes from a benchmark in the repo.
 3. **Make it runnable.** One-command setup, CI, releases and docs, so someone else can use it without asking me.
 
